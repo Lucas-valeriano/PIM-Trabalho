@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C903488-816E-4B43-85D9-72D5D80FD6C7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PIM</RootNamespace>
+    <AssemblyName>PIM</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastrarPN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarPN.Designer.cs">
+      <DependentUpon>CadastrarPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarSetor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarSetor.Designer.cs">
+      <DependentUpon>CadastrarSetor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroMeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroMeta.Designer.cs">
+      <DependentUpon>CadastroMeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassCliente\AlteraCliente.cs" />
+    <Compile Include="ClassCliente\Cliente.cs" />
+    <Compile Include="ClassCliente\DeletaCliente.cs" />
+    <Compile Include="ClassCliente\InsertCliente.cs" />
+    <Compile Include="ClassCliente\selectCliente.cs" />
+    <Compile Include="ClassCliente\SelectEdit.cs" />
+    <Compile Include="ClassColaborador\AlteraColaborador.cs" />
+    <Compile Include="CadastroColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroColaboradores.Designer.cs">
+      <DependentUpon>CadastroColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroProdutos.Designer.cs">
+      <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassColaborador\AlteraSenha.cs" />
+    <Compile Include="ClassColaborador\Colaborador.cs" />
+    <Compile Include="ClassColaborador\LoginColaborador.cs" />
+    <Compile Include="ClassColaborador\SelectColaborador.cs" />
+    <Compile Include="ClassColaborador\SelectEditCo.cs" />
+    <Compile Include="ClassCompra\checkItemCompra.cs" />
+    <Compile Include="ClassCompra\InsertCompra.cs" />
+    <Compile Include="ClassCompra\LancamentoContabilCompra.cs" />
+    <Compile Include="ClassCompra\RetiraLista.cs" />
+    <Compile Include="ClassCotacao\AlteraCotacao.cs" />
+    <Compile Include="ClassCotacao\DeletaCotacao.cs" />
+    <Compile Include="ClassCotacao\InsertCotacao.cs" />
+    <Compile Include="ClassLogin.cs" />
+    <Compile Include="ClassMeta\AlteraMeta.cs" />
+    <Compile Include="ClassMeta\Ano.cs" />
+    <Compile Include="ClassMeta\Comissao.cs" />
+    <Compile Include="ClassMeta\DeletaMeta.cs" />
+    <Compile Include="ClassMeta\InsertMeta.cs" />
+    <Compile Include="ClassMeta\Meses.cs" />
+    <Compile Include="ClassMeta\Meta.cs" />
+    <Compile Include="ClassMeta\PuxarAno.cs" />
+    <Compile Include="ClassMeta\PuxarMeses.cs" />
+    <Compile Include="ClassMeta\SelectMetas.cs" />
+    <Compile Include="ClassMeta\ValorComissao.cs" />
+    <Compile Include="ClassPN\AlteraPN.cs" />
+    <Compile Include="ClassPN\DeletaPn.cs" />
+    <Compile Include="ClassPN\InsertPN.cs" />
+    <Compile Include="ClassPN\PN.cs" />
+    <Compile Include="ClassPN\puxaPN.cs" />
+    <Compile Include="ClassPN\SelectEditPn.cs" />
+    <Compile Include="ClassPN\SelectPn.cs" />
+    <Compile Include="ClassProduto\AlteraProduto.cs" />
+    <Compile Include="ClassProduto\AlteraQuantidadeProduto.cs" />
+    <Compile Include="ClassProduto\CompraProduto.cs" />
+    <Compile Include="ClassProduto\DeletaProduto.cs" />
+    <Compile Include="ClassProduto\InsertProduto.cs" />
+    <Compile Include="ClassProduto\Produto.cs" />
+    <Compile Include="ClassProduto\ProdutoDashboardCP.cs" />
+    <Compile Include="ClassProduto\ProdutoDashboardCR.cs" />
+    <Compile Include="ClassProduto\SelecionaProd.cs" />
+    <Compile Include="ClassProduto\SelectEditPro.cs" />
+    <Compile Include="ClassProduto\SelectProduto.cs" />
+    <Compile Include="ClassSetor\ApagaSetor.cs" />
+    <Compile Include="ClassSetor\InsertSetor.cs" />
+    <Compile Include="ClassSetor\PuxaSetor.cs" />
+    <Compile Include="ClassSetor\SelectSetor.cs" />
+    <Compile Include="ClassSetor\Setor.cs" />
+    <Compile Include="ClassVenda\IV.cs" />
+    <Compile Include="ClassVenda\Picking.cs" />
+    <Compile Include="ClassVenda\SelectVendaPrazo.cs" />
+    <Compile Include="ClassVenda\AtualizaEstoque.cs" />
+    <Compile Include="ClassVenda\DeletaVenda.cs" />
+    <Compile Include="ClassVenda\InsereItem.cs" />
+    <Compile Include="ClassVenda\InsereVenda.cs" />
+    <Compile Include="ClassVenda\LancamentoContabilVenda.cs" />
+    <Compile Include="ClassVenda\SelectClienteVenda.cs" />
+    <Compile Include="ClassVenda\SelectColaboradorVenda.cs" />
+    <Compile Include="ClassVenda\SelectPNVenda.cs" />
+    <Compile Include="ClassVenda\SelectProdutoVenda.cs" />
+    <Compile Include="ClassVenda\TrazVenda.cs" />
+    <Compile Include="ClassVenda\Venda.cs" />
+    <Compile Include="ClassVenda\VendaSemProduto.cs" />
+    <Compile Include="ClassVenda\VN.cs" />
+    <Compile Include="ClassVenda\VP.cs" />
+    <Compile Include="ConectaDb.cs" />
+    <Compile Include="ClassColaborador\DeletaColaborador.cs" />
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EdtPn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdtPn.Designer.cs">
+      <DependentUpon>EdtPn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estoque.Designer.cs">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundoPadrao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundoPadrao.Designer.cs">
+      <DependentUpon>FundoPadrao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassColaborador\InsertColaborador.cs" />
+    <Compile Include="GeradorNfe.cs" />
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mascara.cs" />
+    <Compile Include="OrdemCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdemCompra.Designer.cs">
+      <DependentUpon>OrdemCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReajustaLayout.cs" />
+    <Compile Include="Senha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Senha.Designer.cs">
+      <DependentUpon>Senha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="System\Windows\SystemParameters.cs" />
+    <Compile Include="Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venda.Designer.cs">
+      <DependentUpon>Venda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendaPrazo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendaPrazo.Designer.cs">
+      <DependentUpon>VendaPrazo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CadastrarPN.resx">
+      <DependentUpon>CadastrarPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarSetor.resx">
+      <DependentUpon>CadastrarSetor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroColaboradores.resx">
+      <DependentUpon>CadastroColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroMeta.resx">
+      <DependentUpon>CadastroMeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroProdutos.resx">
+      <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdtPn.resx">
+      <DependentUpon>EdtPn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estoque.resx">
+      <DependentUpon>Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundoPadrao.resx">
+      <DependentUpon>FundoPadrao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdemCompra.resx">
+      <DependentUpon>OrdemCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="senha.resx">
+      <DependentUpon>Senha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venda.resx">
+      <DependentUpon>Venda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendaPrazo.resx">
+      <DependentUpon>VendaPrazo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\MySql.Data.Resources.datasource" />
+    <None Include="Properties\DataSources\MySql.Data.ResourcesX.datasource" />
+    <None Include="Properties\DataSources\PIM.ClassPN.SelectPn.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user-to-social-network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery-truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar-symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pyramid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-bag1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\6272.jpg" />
+    <None Include="Resources\fecha.png" />
+    <None Include="Resources\employee.png" />
+    <None Include="Resources\deal.png" />
+    <None Include="Resources\users.png" />
+    <None Include="Resources\minimize-tab.png" />
+    <None Include="Resources\maximize1.png" />
+    <None Include="Resources\expand-button.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\cancel1.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\62723.jpg" />
+    <None Include="Resources\62722.jpg" />
+    <None Include="Resources\62721.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
